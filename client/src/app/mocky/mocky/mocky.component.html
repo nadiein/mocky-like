@@ -4,12 +4,13 @@
   </mat-card-header>
 </mat-card>
 
-<form class="example-form">
+<form class="example-form" #mockyForm="ngForm" (ngSubmit)="save(mockyForm.value)" method="POST">
   <mat-form-field class="example-full-width">
     <textarea matInput placeholder="Paste mock data to access generate link"></textarea>
   </mat-form-field>
   <div class="example-button-row">
-    <button mat-raised-button color="primary">Primary</button>
-    <a mat-raised-button routerLink=".">Link</a>
+    <button mat-raised-button color="primary" type="submit"
+            [disabled]="!mockyForm.form.valid">Generate link</button>
+    <a mat-raised-button routerLink=".">Link ...</a>
   </div>
 </form>

@@ -1,3 +1,31 @@
+.example-card {
+  margin-bottom: 30px;
+}
+
 .example-full-width {
   width: 100%;
+
+  .mat-input-element {
+    min-height: 50px;
+    resize: none;
+    transition: min-height .15s ease;
+  }
+
+  &.mat-focused {
+
+    .mat-input-element {
+      min-height: 200px;
+    }
+  }
+}
+
+.mat-card-header {
+
+  .mat-card-title {
+    margin-bottom: 0;
+  }
+}
+
+.mat-primary {
+  margin-right: 10px;
 }
