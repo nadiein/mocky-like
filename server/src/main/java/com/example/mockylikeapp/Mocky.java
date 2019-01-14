@@ -10,7 +10,10 @@ import javax.persistence.Entity;
 @Data
 @NoArgsConstructor
 public class Mocky {
-    @Id @GeneratedValue
+
+    @Id
+    @GeneratedValue
     private Long id;
+
     private @NonNull String name;
 }

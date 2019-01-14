@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/client/mocky" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jpa-angular-7/client" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/mocky-like" vcs="Git" />
   </component>
 </project>
