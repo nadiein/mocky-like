@@ -14,7 +14,7 @@ export class MockyService {
   }
 
   get(id: string) {
-    return this.http.get(this.CAR_API + '/' + id);
+    return this.http.get(this.MOCKY_API + '/' + id);
   }
 
   save(mocky: any): Observable<any> {

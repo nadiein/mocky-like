@@ -7,10 +7,6 @@ const routes: Routes = [
   {
     path: 'mocky',
     component: MockyComponent
-  },
-  {
-    path: 'mocky-add',
-    component: MockyComponent
   }
 ];
 
