@@ -1,14 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MockyComponent} from "./mocky/mocky/mocky.component";
 
-const routes: Routes = [
-  { path: '', redirectTo: '/mocky', pathMatch: 'full' },
-  {
-    path: 'mocky',
-    component: MockyComponent
-  }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
