@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MockApplication",
+            "request": "launch",
+            "mainClass": "com.ion.mock.MockApplication",
+            "projectName": "mock"
+        }
+    ]
+}
