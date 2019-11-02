@@ -4,8 +4,8 @@ import { Mock } from './Mock'
 
 export class Mocks extends React.Component {
 
-    constructor(mockService, props) {
-        super(props);
+    constructor(mockService) {
+        super();
         this.mockService = new MocksService();
         this.state = {
             mocks: [],

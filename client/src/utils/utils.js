@@ -32,6 +32,13 @@ export class MocksService {
         )
     }
 
+    getMockById(endpoint) {
+        return http(endpoint, 'get', corsHeader).pipe(
+            map(res => res.response),
+            map(item => Object.assign(new MockModel(), item))
+        )
+    }
+
     postMockForm(endpoint, data) {
         return http(endpoint, 'post', postHeader, data);
     }
