@@ -24,6 +24,7 @@ public class MockModel {
     private Long id;
 
     private String mockData;
+    private String mockId;
 
     @Id
     @GeneratedValue
@@ -35,11 +36,20 @@ public class MockModel {
         this.id = id;
     }
 
+    public String getMockId() {
+        return mockId;
+    }
+
+    public void setMockId(String mockId) {
+        this.mockId = mockId;
+    }
+
     public String getMockData() {
         return mockData;
     }
 
     public void setMockData(String mockData) {
-        this.mockData = Utils.getSHA512(mockData, Utils._salt);
+        this.mockData = mockData;
+        this.mockId = Utils.getMd5(mockData);
     }
 }

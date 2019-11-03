@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 import { MocksService, MockModel } from '../utils/utils';
 
@@ -31,6 +32,7 @@ export class MockSinglePage extends React.Component {
         return (
             <div>
                 {this.state ? this.state.mock.mockData : null}
+                <Link to={{ pathname: `/mocks` }}>Back</Link>
             </div>
         );
     }

@@ -4,7 +4,7 @@ import * as serviceWorker from './serviceWorker';
 import { Router } from "react-router";
 import { createBrowserHistory } from "history";
 
-import './index.css';
+import './index.scss';
 
 import App from './App';
 

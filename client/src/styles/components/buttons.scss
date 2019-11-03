@@ -1,0 +1,62 @@
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    @include button-size(5px, 10px, em(16), 1.2, 3px);
+
+    &,
+    &:active,
+    &.active {
+
+        &:focus,
+        &.focus {
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+        color: #888;
+        text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+        background-image: none;
+        outline: 0;
+        @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: disabled;
+        opacity: .65;
+        @include box-shadow(none);
+    }
+}
+
+a.btn {
+
+    &.disabled,
+    fieldset[disabled] & {
+        pointer-events: none; 
+    }
+}
+
+.btn-primary {
+    @include button-variant(#0011cc, #0011cc, #0011cc);
+}
+
+.btn-md {
+    @include button-size(5px, 10px, em(16), 1.2, 3px);
+}

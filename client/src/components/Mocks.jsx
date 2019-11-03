@@ -1,6 +1,6 @@
 import React from 'react';
 import { MocksService } from '../utils/utils';
-import { Mock } from './Mock'
+import { Mock } from './Mock';
 
 export class Mocks extends React.Component {
 
@@ -9,6 +9,7 @@ export class Mocks extends React.Component {
         this.mockService = new MocksService();
         this.state = {
             mocks: [],
+            mock: null,
             mockValue: ''
         }
     }
@@ -19,13 +20,20 @@ export class Mocks extends React.Component {
         })
     }
 
-    onFormSubmitEvent = (event, data) => {
+    onFormSubmitEvent = (event) => {
         event.preventDefault();
         let formData = new FormData();
+        let object = {};
 
-        formData.set('mockData', this.state.mockValue)
+        formData.set('mockData', this.state.mockValue);
+        formData.forEach((value, key) => {object[key] = value});
 
-        this.mockService.postMockForm('/mocks', formData).subscribe(res => { })
+        let json = JSON.stringify(object);
+
+        this.mockService.postMockForm('/mocks', json).subscribe(res => {
+            this.setState({ mock: res })
+            console.log('        ', this.state.mock)
+        })
     }
 
     onChangeValueTextarea = (event) => {
@@ -33,13 +41,14 @@ export class Mocks extends React.Component {
     }
 
     render() {
+        let { mock } = this.state;
         return (
             <div>
                 <form>
                     <textarea name="textarea" cols="30" rows="10" value={this.state.mockValue} onChange={this.onChangeValueTextarea}></textarea>
-                    <button type="submit" onClick={(e, data) => this.onFormSubmitEvent(e, data)}>Send</button>
+                    <button type="submit" onClick={(e) => this.onFormSubmitEvent(e)}>Send</button>
                 </form>
-                { this.state.mocks.map((el, i) => <Mock mock={el} key={i} />) }
+                { mock ? <Mock mock={mock} key={mock} /> : null }
             </div>
         );
     }

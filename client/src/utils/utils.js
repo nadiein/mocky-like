@@ -11,7 +11,7 @@ const corsHeader = {
     'Access-Control-Allow-Credentials': true
 }
 
-const postHeader = { 'Content-Type': 'application/json' }
+const postHeader = { 'Content-Type': 'application/json;charset=UTF-8' }
 
 const http = (endpoint, method, headers, body=null) => ajax({
     url: endpoint ? `${BASE_URL + endpoint}` : BASE_URL,
@@ -40,12 +40,16 @@ export class MocksService {
     }
 
     postMockForm(endpoint, data) {
-        return http(endpoint, 'post', postHeader, data);
+        return http(endpoint, 'post', postHeader, data).pipe(
+            map(res => res.response),
+            map(item => Object.assign(new MockModel(), item))
+        );
     }
 }
 
 export class MockModel {
     id = null;
+    mockId = null;
     data = null;
 }
 
