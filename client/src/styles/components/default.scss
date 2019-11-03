@@ -1,0 +1,13 @@
+html {
+    min-height: 100%;
+    height: auto;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    min-height: 100%;
+    color: $default-text-color;
+    font: $default-font-weight normal $default-font-size/$default-line-height $default-font-family;
+}

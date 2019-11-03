@@ -32,7 +32,6 @@ export class Mocks extends React.Component {
 
         this.mockService.postMockForm('/mocks', json).subscribe(res => {
             this.setState({ mock: res })
-            console.log('        ', this.state.mock)
         })
     }
 
@@ -44,9 +43,19 @@ export class Mocks extends React.Component {
         let { mock } = this.state;
         return (
             <div>
-                <form>
-                    <textarea name="textarea" cols="30" rows="10" value={this.state.mockValue} onChange={this.onChangeValueTextarea}></textarea>
-                    <button type="submit" onClick={(e) => this.onFormSubmitEvent(e)}>Send</button>
+                <form className="m-b-20">
+                    <label htmlFor="textarea" className="form-control-holder form-control-holder-md">
+                        <textarea
+                            id="textarea"
+                            className="form-control form-control-md"
+                            name="textarea"
+                            value={this.state.mockValue}
+                            onChange={this.onChangeValueTextarea}></textarea>
+                    </label>
+                    <button
+                        className="btn btn-primary btn-md"
+                        type="submit"
+                        onClick={(e) => this.onFormSubmitEvent(e)}>Generate link</button>
                 </form>
                 { mock ? <Mock mock={mock} key={mock} /> : null }
             </div>

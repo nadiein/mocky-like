@@ -1,0 +1,17 @@
+$path-fonts: '../fonts/';
+$path-images: '../images/';
+
+$font: 'Arial';
+
+$default-font-family: $font, sans-serif;
+
+$default-font-size: 16px;
+$default-font-weight: 400;
+$default-line-height: 1;
+
+%pseudo-el {
+    position: absolute;
+    display: block;
+    content: '';
+}
+

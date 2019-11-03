@@ -54,9 +54,10 @@ a.btn {
 }
 
 .btn-primary {
-    @include button-variant(#0011cc, #0011cc, #0011cc);
+    @include button-variant(#0011cc, #fff, #0011cc);
 }
 
 .btn-md {
+    min-width: 150px;
     @include button-size(5px, 10px, em(16), 1.2, 3px);
 }

@@ -1,0 +1,93 @@
+$primary-color: #232c64;
+$danger-color: #dd2b4a;
+$success-color: #8fc73e;
+$dark-100: #999;
+$dark-500: #1e1e1e;
+$dark-700: #000;
+$light: #fff;
+
+$default-text-color: $primary-color;
+$text-color: $dark-500;
+
+$ui-colors: (
+    primary: $primary-color,
+    danger: $danger-color,
+    success: $success-color,
+    dark-100: $dark-100,
+    dark-500: $dark-500,
+    dark-700: $dark-700,
+    light: $light
+);
+
+$gaps-dict: (0, 5, 10, 15, 20, 25, 30, 50);
+
+@each $color, $value in $ui-colors {
+
+    .bg-#{$color} {
+        background: $value;
+        transition: background .37s ease-out;
+
+        &:hover {
+            background: darken($value, 7%);
+            transition: background .37s ease-in;
+        }
+    }
+
+    .color-#{$color} {
+        color: $value;
+    }
+}
+
+//Gaps classes
+@each $gap in $gaps-dict {
+
+    .p-vert-#{$gap} {
+        padding-top: $gap + px;
+        padding-bottom: $gap + px;
+    }
+
+    .p-horiz-#{$gap} {
+        padding-left: $gap + px;
+        padding-right: $gap + px;
+    }
+
+    .p-#{$gap} {
+        padding: $gap + px;
+    }
+
+    .p-l-#{$gap} {
+        padding-left: $gap + px;
+    }
+
+    .p-r-#{$gap} {
+        padding-right: $gap + px;
+    }
+
+    .p-t-#{$gap} {
+        padding-top: $gap + px;
+    }
+
+    .p-b-#{$gap} {
+        padding-bottom: $gap + px;
+    }
+
+    .m-#{$gap} {
+        margin: $gap + px;
+    }
+
+    .m-l-#{$gap} {
+        margin-left: $gap + px;
+    }
+
+    .m-r-#{$gap} {
+        margin-right: $gap + px;
+    }
+
+    .m-t-#{$gap} {
+        margin-top: $gap + px;
+    }
+
+    .m-b-#{$gap} {
+        margin-bottom: $gap + px;
+    }
+}

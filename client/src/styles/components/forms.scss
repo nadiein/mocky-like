@@ -1,0 +1,48 @@
+$form-control-md: 250px;
+
+.form-control-holder {
+    position: relative;
+    display: block;
+    transition: all .15s ease;
+
+    &.form-control-holder-md {
+        width: auto;
+    }
+}
+
+.form-control {
+    padding: 5px 15px 5px 5px;
+    color: $dark-500;
+    font-size: em(16);
+    line-height: 1.4;
+
+    &.form-control-md {
+        min-width: $form-control-md;
+        min-height: 100px;
+    }
+}
+
+@include placeholder {
+    line-height: 1.92;
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+
+input:focus,
+.form-control:focus {
+    outline: none;
+
+    @include placeholder {
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea {
+    text-overflow: ellipsis;
+}

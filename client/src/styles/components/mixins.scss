@@ -1,4 +1,6 @@
-$browser-context: 16; // Default
+$browser-context: 16;
+
+
 
 @function str-replace($string, $search, $replace: "") {
     $index: str-index($string, $search);
@@ -70,20 +72,21 @@ $browser-context: 16; // Default
         &:hover,
         &:focus,
         &.focus {
-        color: $color;
-        background-color: darken($background, 17%);
-        border-color: darken($border, 25%);
+            color: $color;
+            background-color: darken($background, 17%);
+            border-color: darken($border, 25%);
         }
     }
 
     &.disabled,
     &[disabled],
     fieldset[disabled] & {
+        
         &:hover,
         &:focus,
         &.focus {
-        background-color: $background;
-        border-color: $border;
+            background-color: $background;
+            border-color: $border;
         }
     }
 
@@ -149,19 +152,15 @@ $browser-context: 16; // Default
     }
 
 }
-// Placeholder text
-@mixin placeholder($color: $input-color-placeholder) {
-
-    &::-moz-placeholder {
-        color: $color;
-        opacity: 1;
-    }
-
-    &:-ms-input-placeholder { color: $color; }
-    &::-webkit-input-placeholder  { color: $color; }
-}
 
 @mixin box-shadow($shadow...) {
     -webkit-box-shadow: $shadow;
     box-shadow: $shadow;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}
 }
