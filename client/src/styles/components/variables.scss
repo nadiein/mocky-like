@@ -1,9 +1,11 @@
-$path-fonts: '../fonts/';
+$path-fonts: "./../../fonts/";
 $path-images: '../images/';
 
-$font: 'Arial';
+$flow: 'Flow';
+$mukta: 'Mukta';
 
-$default-font-family: $font, sans-serif;
+$preload-font: $flow;
+$default-font-family: $mukta, sans-serif;
 
 $default-font-size: 16px;
 $default-font-weight: 400;

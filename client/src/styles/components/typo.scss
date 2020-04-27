@@ -8,3 +8,13 @@ a {
         transition: all .3s ease-in;
     }
 }
+
+.title-primary {
+    font-size: em(45);
+    color: #78909c;
+}
+
+.preload-font {
+    font-family: $preload-font;
+    font-size: em(20);
+}

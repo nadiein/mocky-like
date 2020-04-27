@@ -10,4 +10,6 @@ body {
     min-height: 100%;
     color: $default-text-color;
     font: $default-font-weight normal $default-font-size/$default-line-height $default-font-family;
+    background-color: $blue-light;
+    margin: 0;
 }
