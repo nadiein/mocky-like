@@ -26,6 +26,7 @@
     flex-direction: column;
 
     .text-content {
+        width: fit-content;
         padding: 10px;
         font-size: em(18);
         cursor: pointer;
@@ -39,4 +40,12 @@
             padding-left: 5px;
         }
     }
+}
+
+.js-tooltip {
+    position: absolute;
+    padding: 5px;
+    background-color: #fff;
+    color: #78909c;
+    font-size: em(12);
 }
