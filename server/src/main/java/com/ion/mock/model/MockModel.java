@@ -49,7 +49,7 @@ public class MockModel {
     }
 
     public void setMockData(String mockData) {
-        this.mockData = mockData;
+        this.mockData = Utils.stringToJson(mockData);
         this.mockId = Utils.getMd5(mockData);
     }
 }

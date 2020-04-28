@@ -34,9 +34,9 @@ public class MockApplication {
                         MockModel mockModel = new MockModel();
                         mockModel.setMockData(Utils.getSHA512(Long.toString(i), Utils._salt));
                         return mockModel;
-                    })
-                    .map(v -> repository.save(v))
-                    .forEach(System.out::println);
+                    });
+                    // .map(v -> repository.save(v))
+                    // .forEach(System.out::println);
         };
     }
 

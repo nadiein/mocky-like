@@ -89,7 +89,7 @@ export class MockSinglePage extends React.Component {
                     onMouseOver={(e) => this.onDispatchMouseEvent(e, 0)}
                     onMouseOut={(e) => this.onDispatchMouseEvent(e, 1)}
                     onMouseMove={(e) => this.onDispatchMouseEvent(e, 2)}
-                    onClick={(e) => this.onCopyToBufferEvent(e)}>{this.state.mock.mockData}</p> : null}
+                    onClick={(e) => this.onCopyToBufferEvent(e)}>{JSON.stringify(this.state.mock.mockData)}</p> : null}
             </div>
         );
     }

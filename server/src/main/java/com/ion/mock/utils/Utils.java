@@ -42,4 +42,9 @@ public class Utils {
             throw new RuntimeException(e);
         }
     }
+
+    public static String stringToJson(String str) {
+        String jsonString = "{data: " + str + "}";
+        return jsonString;
+    }
 }
