@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import org.json.*;
 
 public class Utils {
 
@@ -44,7 +45,7 @@ public class Utils {
     }
 
     public static String stringToJson(String str) {
-        String jsonString = "{data: " + str + "}";
+        String jsonString = "{mock: " + str.replace("\n", "").replace("\r", "") + "}";
         return jsonString;
     }
 }
